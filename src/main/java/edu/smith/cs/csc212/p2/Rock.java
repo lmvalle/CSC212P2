@@ -28,7 +28,7 @@ public class Rock extends WorldObject {
 	};
 	
 	// TODO(lab): introduce a member here that indexes the ROCK_COLORS array.
-	
+	int rockColor;
 	/**
 	 * Construct a Rock in our world.
 	 * @param world - the grid world.
@@ -37,6 +37,7 @@ public class Rock extends WorldObject {
 		super(world);
 		// TODO(lab): initialize your rock color index to a random number!
 		// Note that all WorldObjects have a ``rand`` available so you don't need to make one.
+		this.rockColor = rand.nextInt(ROCK_COLORS.length);
 	}
 
 	/**
