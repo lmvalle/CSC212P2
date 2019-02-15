@@ -236,5 +236,11 @@ public class World {
 			IntPoint past = putWhere.get(i+1);
 			followers.get(i).setPosition(past.x, past.y);
 		}
+		System.out.println("Recent positions is a double ended queue list");
+		System.out.println("followers is the list of found fish the user passes over");
+		System.out.println("target is the WorldObject player object");
+		System.out.println("past is assigned to that index value in loop "
+				+ "to add at end of existing following fish, putWhere.get(1) is "
+				+ "position of target");
 	}
 }

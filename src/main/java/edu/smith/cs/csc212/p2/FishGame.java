@@ -48,6 +48,7 @@ public class FishGame {
 	 * @param w how wide is the grid?
 	 * @param h how tall is the grid?
 	 */
+	public static final int NUM_ROCKS = 5;
 	public FishGame(int w, int h) {
 		world = new World(w, h);
 		
@@ -59,12 +60,12 @@ public class FishGame {
 		
 		// TODO(lab) Generate some more rocks!
 		// TODO(lab) Make 5 into a constant, so it's easier to find & change.
-		int insertRock = 5;
-		for (int i=0; i<insertRock; i++) {
+		for (int i=0; i< NUM_ROCKS; i++) {
 			world.insertRockRandomly();
 		}
 		
 		// TODO(lab) Make the snail!
+		Snail dorid = world.insertSnailRandomly();
 		
 		// Make the player out of the 0th fish color.
 		player = new Fish(0, world);
@@ -94,7 +95,7 @@ public class FishGame {
 	 * @return true if the player has won (or maybe lost?).
 	 */
 	public boolean gameOver() {
-		// TODO(P2) We want to bring the fish home before we win!
+		// TODO(P2) We want to bring the fish home before we win
 		return missing.isEmpty();
 	}
 
@@ -119,7 +120,7 @@ public class FishGame {
 				
 				// Remove from world.
 				// TODO(lab): add to found instead! (So we see objectsFollow work!)
-				world.remove(wo);
+				found.add((Fish) wo);
 				
 				// Increase score when you find a fish!
 				score += 10;
@@ -143,6 +144,7 @@ public class FishGame {
 			// 30% of the time, lost fish move randomly.
 			if (rand.nextDouble() < 0.3) {
 				// TODO(lab): What goes here?
+				lost.moveRandomly();
 			}
 		}
 	}

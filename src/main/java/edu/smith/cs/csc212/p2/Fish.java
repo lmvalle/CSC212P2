@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
+import java.util.Random;
 
 /**
  * Most Fish behavior lives up in WorldObject (a Fish just looks special!).
@@ -15,6 +16,7 @@ public class Fish extends WorldObject {
 	/**
 	 * A fish is only special because of its color now!
 	 */
+	Random rand = new Random();
 	public static Color[] COLORS = {
 			Color.red,
 			Color.green,
@@ -22,7 +24,7 @@ public class Fish extends WorldObject {
 			Color.orange,
 			Color.CYAN,
 			Color.blue,
-			Color.DARK_GRAY,
+			Color.getHSBColor(0.78f,0.80f,0.98f),
 			Color.magenta,
 			Color.pink,
 			Color.white,
